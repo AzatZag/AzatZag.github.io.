@@ -4,24 +4,33 @@
 
 body {
   font-family: Arial, sans-serif;
-  background-color: #808080;
-display: flex;
-flex-direction: column;
-  
-
+  background-color: #acaaaa;
+  display: flex;
+  flex-direction: column;
+  margin-top: 100px;
+  }
+.container {
+    /* max-width: 1200px; */
+    margin: 0 auto;
+    padding: 20px;
 }
-
 header {
   background-color: #96af8c;
   padding: 10px;
   width: 100%; 
-  /* background-attachment: fixed; */
-  position: fixed;
+  height: 10%;
+  /* position: fixed; */
   top:0;
   left:0;
 
 }
 
+b{
+  color: #5da70e;}
+  
+.header_a{
+  font-size: 30px;
+}
 nav {
   display: flex;
   align-items: center;
@@ -39,95 +48,113 @@ ul {
 li {
   list-style: none;
 }
-
+.annonce {
+  padding: 0 25% 0 25%;
+ 
+  font-size: 25px;
+  
+}
 a {
-  text-decoration: none; /* Убираем подчеркивание */
-  color: black; /* Цвет текста */
+  text-decoration: none;
+  color: black;
   font-weight: bold;
-  transition: color 0.5s; /* Плавное изменение цвета */
+  transition: color 0.5s; 
 }
 
 a:hover {
-  color: #7cfc00; /* Измените цвет при наведении */
+  color: #7cfc00; 
+}
+
+h1 {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+ font-size:40px ;
 }
 
 main  { 
-
-  margin-top: 8%;
+   margin-top: 8%;
 } 
 
 footer {
   background-color: #96af8c;
   height: 50px;
+  margin-top: 5%;
 }
-.container {
+.container, .wrap {
   display: flex;
-  justify-content: space-around;
-  /* align-items: center; */
-  /* flex-direction: row; */
-  /* flex-wrap: wrap; */
-  /* gap: 20px; */
-}
-
-h1 {
-  /* display: flex; */
-  /* text-align: center; */
-  /* justify-content: center; */
-/* position: relative; */
-/* left: 25px; */
-  font-size:40px ;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 20px;
+   
 }
 
 .p {
   text-align: center;
-  /* width: 30%; */
+  margin: 0;
+  width: 100%;
   font-size: 40px;
   font-weight: bold;
 }
 
+.contact {
+  font-size:40px ;
+}
 .logo {
-  height: 60px;
+  height: 140px;
+  width: 140px;
+  border-radius: 5%;
 }
 
 .montage {
-  width: 60%;
+  width: 50%;
   border-radius: 10px;
   margin: 3%;
-  
-  
 }
-.wrap {
-display: flex;
-flex-direction: column;
-justify-content: center;
-align-items: center;
-}
+
 .art{
   min-height: 400px;
   margin-top: 10%;
 }
 
-.container-galeri{
-  display: flex;
+.container-galeri {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
+    gap: 20px;
+    padding: 20px;
 
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 10px;
 }
 .galeri{
-  width: 800px;
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  border: 2px solid #96af8c;
+  
   border-radius: 10px;
-  height: 600px; /* Добавлено для установки одинаковой высоты */
-  object-fit: cover; /* Добавлено для сохранения пропорций изображения */
+  height: 300px;
+  object-fit: cover;
+  display: block; 
+}
+.galeri:hover {
+  transform: scale(1.9);
+  transition: 2s;
+  
 }
 .abzac-galeri{
-  font-size: 80px;
+  font-size: 60px;
   display: flex;
   justify-content: center;
-margin: 10% 0;
+  margin: 5% 0;
 
 }
-
+.abzac-galeri1 {
+  font-size: 30px;
+  display: flex;
+  justify-content: center;
+  margin: 5% 0;
+}
 .link {
   position: relative;
   display: inline-block;
@@ -155,4 +182,94 @@ margin: 10% 0;
 
 .link:hover .link-content {
   display: block;
+}
+.img-hover-container {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  max-width: 800px;
+}
+
+.img-hover-container .img-caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0,0,0,0.7);
+  color: #fff;
+  padding: 8px;
+  text-align: center;
+  opacity: 0;
+  transition: opacity 0.3s;
+  pointer-events: none;
+   opacity: 1;
+}
+
+.img-hover-container:hover .img-caption {
+   opacity: 1;
+ 
+}
+
+
+.video-container {
+  width: 100%;
+  max-width: 400px;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+}
+
+.video-container video {
+  width: 95%;
+  height: auto; 
+  border-radius: 10px; 
+  max-height: 100%;
+}
+
+
+#tel {
+  color: transparent;
+  position: relative;
+  padding: 12px 16px;
+  
+}
+
+#tel::after {
+  content: "Téléphone";
+  color: black;
+  position: absolute;
+  left: 15px;
+  
+}
+
+#tel:hover::after {
+  content: "+33 6 29 96 32 49";
+  color: rgb(0, 0, 0);
+  font-weight: bold;
+}
+
+@media (max-width: 768px) {
+   h1{ 
+    margin-top: 5%;
+     font-size: 30px;
+  }
+  .galeri{
+    max-width: 100%;
+    width: 100%;
+    height: auto;
+  }
+  .montage {
+    width: 90%;
+  }
+}
+@media (max-width:548px) {
+    h1{
+      font-size: 20px;
+    margin-top: 20%;
+    }
+  .contact {
+    font-size: 24px;
+  }
 }
